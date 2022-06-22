@@ -5,8 +5,9 @@ import { useState } from 'react';
 const Box=({opt,r,c,grid,setGrid})=>{
     const [fa,setfa]=useState(0);
     const changeDiv=()=>{
-        grid[r][c]=opt;
-        setGrid(grid);
+        const copy=[... grid];
+        copy[r][c]=opt;
+        setGrid(copy);
         setfa(opt);
     }
     if(grid[r][c]==-1){

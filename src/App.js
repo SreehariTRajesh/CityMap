@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <div className={style.control}>    
-        <Control setOption={changeOption} grid={copy} setGrid={setCity}/>
+        <Control setOption={changeOption} grid={city} setGrid={setCity}/>
       </div>
       <div className={style.grid}>
         <Grid opt={opt} grid={city} setGrid={setCity}/>
