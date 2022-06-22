@@ -1,0 +1,17 @@
+.App{
+    display: inline-flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.control{
+    flex: 1;
+    width: 100%;
+}
+.grid{
+    width: 100%;
+    flex: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:88vh;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Control from "./components/Control";
+import Grid from "./components/Grid";
+import style from './App.module.css';
+import {useState} from 'react';
 function App() {
+  const grid=[];
+  for(var i=0;i<30;++i){
+    var v=[];
+    for(var j=0;j<50;++j){
+      v.push(0);
+    }
+    grid.push(v);
+  }
+  const [opt,setOpt]=useState(0);
+  const changeOption=(param)=>{
+    setOpt(param);
+    console.log(`Option changed to ${param}`);
+  }
+  const [city,setCity]=useState(grid);
+  var copy=city;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={style.control}>    
+        <Control setOption={changeOption} grid={copy} setGrid={setCity}/>
+      </div>
+      <div className={style.grid}>
+        <Grid opt={opt} grid={city} setGrid={setCity}/>
+      </div>
     </div>
   );
 }
-
 export default App;

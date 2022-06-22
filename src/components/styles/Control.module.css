@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+.control{
+    height: 12vh;
+    background-color:#34495e;
+    display: inline-flex;
+    width: 100%;
+    max-width: 100%;
+}
+.obj{
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.row0{
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    display: inline-flex;
+}
+.col0{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col0 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-family: 'Oswald',sans-serif;
+}
+.col1{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col1 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-family: 'Oswald',sans-serif;
+}
+.col2{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col2 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.col3{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col3 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.row1{
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    display: inline-flex;
+}
+.col4{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col4 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.col5{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col5 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.col6{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col6 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+    color: black;
+}
+.col7{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col7 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+    color: black;
+}
+.col8{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col8 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.col9{
+    flex: 1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.col9 button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background-color: #ffffff;
+}
+.findRoute{
+    flex: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.findRoute button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Oswald',sans-serif;
+    font-weight: bolder;
+    color: whitesmoke;
+    background-color: #6699ff;
+    border: none;
+}
