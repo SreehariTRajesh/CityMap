@@ -186,7 +186,7 @@ function PathFinder(grid,setGrid){
             alert("Destination is unreachable");
         }
         else{
-            var copy=grid;
+            var copy=[...grid];
             var pt=des;
             while(pt!=null){
                 console.log(`${pt}: row:-${Math.floor(pt/M)} col:-${pt%M}`);
@@ -195,7 +195,6 @@ function PathFinder(grid,setGrid){
                 }
                 pt=map.get(pt);
             }
-            console.log(copy);
             setGrid(copy);
         }
     }
