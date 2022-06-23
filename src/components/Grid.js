@@ -1,16 +1,16 @@
 import Box from "./Box";
 import style from './styles/Grid.module.css';
 
-const Grid=({opt,grid,setGrid})=>{
+const Grid=({opt,city,setCity})=>{
     return(
         <div className={style.grid}>
-            {grid.map((v,i)=>{
+            {city.map((v,i)=>{
                 return(
                     <div className={style.row}>
                         {v.map((val,j)=>{
                             return(
                                 <div className={style.col}>
-                                    <Box opt={opt} r={i} c={j} grid={grid} setGrid={setGrid}/>
+                                    <Box opt={opt} r={i} c={j} city={city} setCity={setCity}/>
                                 </div>
                             );
                         })}

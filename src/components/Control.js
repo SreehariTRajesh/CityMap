@@ -8,7 +8,7 @@ function rightChild(x){
     return 2*x+2;
 }
 function Parent(x){
-    if(x%2==0){
+    if(x%2===0){
         return Math.floor(x/2)-1;
     }
     else return Math.floor(x/2);
@@ -48,7 +48,7 @@ class PriorityQueue{
         this.bubbleUp(key);
     }
     empty(){
-        if(this.values.length==0)
+        if(this.values.length===0)
             return true;
         else return false;
     }
@@ -64,7 +64,7 @@ class PriorityQueue{
             this.indexMap.set(this.values[0].id,0);
         }
         var x=true;
-        while(x==true){
+        while(x===true){
             var l=leftChild(i);
             var r=rightChild(i);
             var sm=this.values[i];
@@ -81,7 +81,7 @@ class PriorityQueue{
                     k=r;
                 }
             }
-            if(k==i){
+            if(k===i){
                 break;
             }
             else{
@@ -107,17 +107,17 @@ function Dijkstra(graph,i,j,N){
     var pQ=new PriorityQueue()
     pQ.push(i,0);
     for(var k=0;k<N;k++){
-        if(k!=i){
+        if(k!==i){
             pQ.push(k,Infinity);
         }
     }
-    while(pQ.empty()==false){
+    while(pQ.empty()===false){
         var obj=pQ.pop();
         dMap.set(obj.id,obj.distance);
         pMap.set(obj.id,obj.prev);
         console.log(obj);
         for(var k=0;k<graph[obj.id].length;++k){
-            if(mark[graph[obj.id][k]]==false){    
+            if(mark[graph[obj.id][k]]===false){    
                 if(obj.distance+1<pQ.values[pQ.indexMap.get(graph[obj.id][k])].distance){
                     pQ.DecreaseKey(graph[obj.id][k],obj.distance+1);
                     pQ.values[pQ.indexMap.get(graph[obj.id][k])].prev=obj.id;
@@ -128,7 +128,7 @@ function Dijkstra(graph,i,j,N){
     }
     return [dMap.get(j),pMap];
 }
-function PathFinder(grid,setGrid){
+function PathFinder(grid,setGrid,setOption){
     var N=grid.length;
     var M=grid[0].length;
     var src=-1;
@@ -140,49 +140,50 @@ function PathFinder(grid,setGrid){
     }
     for(var i=0;i<N;++i){
         for(var j=0;j<M;++j){
-            if(grid[i][j]==0 || grid[i][j]==9 || grid[i][j]==8){
+            if(grid[i][j]===0 || grid[i][j]===9 || grid[i][j]===8){
                 if(i>0){
-                   if(grid[i-1][j]==0 || grid[i-1][j]==9 ||grid[i-1][j]==8){
+                   if(grid[i-1][j]===0 || grid[i-1][j]===9 ||grid[i-1][j]===8){
                       graph[i*M+j].push((i-1)*M+j);
                    }
                 }
                 if(i<N-1){
-                    if(grid[i+1][j]==0 || grid[i+1][j]==9 || grid[i+1][j]==8){
+                    if(grid[i+1][j]===0 || grid[i+1][j]===9 || grid[i+1][j]===8){
                       graph[i*M+j].push((i+1)*M+j);
                     }
                 }
                 if(j>0){
-                    if(grid[i][j-1]==0 || grid[i][j-1]==9 || grid[i][j-1]==8){
+                    if(grid[i][j-1]===0 || grid[i][j-1]===9 || grid[i][j-1]===8){
                       graph[i*M+j].push(i*M+j-1);
                     }
                 }
                 if(j<M-1){
-                    if(grid[i][j+1]==0 || grid[i][j+1]==9 || grid[i][j+1]==8){
+                    if(grid[i][j+1]===0 || grid[i][j+1]===9 || grid[i][j+1]===8){
                       graph[i*M+j].push(i*M+j+1);
                     }
                 }
             }
-            if(grid[i][j]==9){
+            if(grid[i][j]===9){
                 src=i*M+j;
             }
-            if(grid[i][j]==8){
+            if(grid[i][j]===8){
                 des=i*M+j;
             }
         }
     }
     console.log(graph);
-    if(src==-1){
+    if(src===-1){
         alert("Source not specified.Please specify source");
     }
-    else if(des==-1){
+    else if(des===-1){
         alert("Destination not specified.Please specify destination");
     }
     else{
+        alert('Are you sure?')
         console.log(N*M);
         var [d,map]=Dijkstra(graph,src,des,N*M);
         console.log(map);
         console.log(d);
-        if(d==Infinity){
+        if(d===Infinity){
             alert("Destination is unreachable");
         }
         else{
@@ -190,17 +191,18 @@ function PathFinder(grid,setGrid){
             var pt=des;
             while(pt!=null){
                 console.log(`${pt}: row:-${Math.floor(pt/M)} col:-${pt%M}`);
-                if(pt!=src && pt!=des){
+                if(pt!==src && pt!==des){
                     copy[Math.floor(pt/M)][pt%M]=-1;
                 }
                 pt=map.get(pt);
             }
             console.log(copy);
+            setOption(0);
             setGrid(copy);
         }
     }
 }
-const Control=({setOption,grid,setGrid})=>{
+const Control=({setOption,city,setCity})=>{
     return(
         <div className={style.control}>
             <div className={style.obj}>
@@ -240,7 +242,7 @@ const Control=({setOption,grid,setGrid})=>{
                 </div>
             </div>
             <div className={style.findRoute}>
-                <button onClick={()=>PathFinder(grid,setGrid)}>Find Route</button>
+                <button onClick={()=>PathFinder(city,setCity,setOption)}>Find Route</button>
             </div>
         </div>
     );

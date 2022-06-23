@@ -21,10 +21,10 @@ function App() {
   return (
     <div className="App">
       <div className={style.control}>    
-        <Control setOption={changeOption} grid={copy} setGrid={setCity}/>
+        <Control setOption={changeOption} city={city} setCity={setCity}/>
       </div>
       <div className={style.grid}>
-        <Grid opt={opt} grid={city} setGrid={setCity}/>
+        <Grid opt={opt} city={city} setCity={setCity}/>
       </div>
     </div>
   );
